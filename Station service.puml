@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+skin rose
+
+title Cas station service 
+actor Client
+actor Pompiste 
+actor Réparateur
+rectangle "Station Service" {
+(Se servir)
+(Remplir citerne)
+usecase (Réparer)
+}
+Client -- (Se servir)
+(Remplir citerne) -- Pompiste
+(Réparer) -- Réparateur
+(Pompiste) <|- (Réparateur)
+
+@enduml
