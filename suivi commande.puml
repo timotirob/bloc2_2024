@@ -1,0 +1,27 @@
+@startuml
+!theme mars
+left to right direction
+skin rose
+
+title Cas passage commande
+
+:client: as cl
+
+rectangle "Suivi de commande" {
+(Suivre une commande) as sc
+(Passer une commande) as pc
+(Passer une commande urgente) as cu
+(Valider l'utilisateur) as v
+(Expédier commande) as ex
+(Expédier commande totale) as ect
+(Expédier une commande partielle) as ecp
+}
+cl -- sc
+sc .> pc
+pc ..> v
+ex ..> pc :extension
+ex <|- ect
+ex <|-- ecp
+pc <|- cu
+
+@enduml
