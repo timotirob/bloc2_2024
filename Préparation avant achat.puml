@@ -1,0 +1,21 @@
+@startuml
+title prépa avant achat
+left to right direction
+actor acheteur
+:haras nationaux: as ha
+
+rectangle "prépa avant achat" {
+acheteur -- (cheval)
+(filiation) -- ha
+(jument) .> (état maternité) : inclusion
+(cheval) .> (carnet vaccinations) : inclusion
+(vérifier présence poulain) .> (jument) : extension
+(robe) .> (cheval) : extension
+(caractère) .> (cheval) : extension
+(filiation) .> (cheval) : extension
+
+(cheval) <|-- (étalon)
+(cheval) <|-- (jument)
+}
+
+@enduml
