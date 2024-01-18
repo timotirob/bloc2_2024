@@ -1,0 +1,25 @@
+@startuml
+title Caisse enregistreuse
+left to right direction
+actor caissier
+:directeur magasin: as dm
+:responsable stocks & logistique: as rs
+:centre d'autorisations: as ca
+rectangle checkout {
+caissier -- (enregistrer article)
+caissier -- (signalement fin vente)
+(coupon réduction) .> (signalement fin vente) : extension
+(paiement) .> (signalement fin vente) : inclusion
+(paiement) .> (transmission information quantités) : inclusion
+
+
+
+(paiement) <|-- (carte de crédit)
+(paiement) <|-- (chèque)
+(paiement) <|-- (espèces)
+(initialiser) -- dm
+(transmission information quantités) -- rs
+(carte de crédit) -- ca
+}
+
+@enduml
