@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Enc\\": "sources/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10"
+  }
+}
