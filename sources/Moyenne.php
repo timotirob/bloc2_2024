@@ -17,15 +17,22 @@ class Moyenne {
      * @param $notes
      * @return float|int
      */
-    public static function calculMoyenneNaive($notes) {
+    private $listeNotes ;
+
+    public function __construct($listeNotes) {
+        $this->listeNotes = $listeNotes ;
+    }
+
+
+    public function calculMoyenneNaive() {
         $somme = 0 ;
-        foreach ($notes as $note) {
+        foreach ($this->listeNotes as $note) {
             $somme += $note->getValeurNote() ;
         }
-        if (count($notes) == 0) {
+        if (count($this->listeNotes) == 0) {
             return 0 ;
         }
-        return $somme / count($notes) ;
+        return $somme / count($this->listeNotes) ;
     }
 
     /**
@@ -33,10 +40,10 @@ class Moyenne {
      * @param $notes
      * @return float|int
      */
-    public static function calculVraieMoyenne($notes) {
+    public function calculVraieMoyenne() {
         $sommeNote = 0 ;
         $sommeCoeff = 0 ;
-        foreach ($notes as $note) {
+        foreach ($this->listeNotes as $note) {
             $sommeNote += $note->getValeurNote() * $note->getCoefficient() ;
             $sommeCoeff += $note->getCoefficient() ;
         }

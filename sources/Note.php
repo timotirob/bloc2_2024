@@ -1,12 +1,12 @@
 <?php
 namespace Enc ;
 class Note {
-    private string $matiere ;
+    private Matiere $matiere ;
     private float $valeurNote ;
     private int $coefficient ;
     private \DateTime   $dateNote ;
 
-public function __construct($matiere, $valeurNote, $coefficient, $dateNote=NULL){
+public function __construct(Matiere $matiere, $valeurNote, $coefficient, $dateNote=NULL){
         $this->matiere = $matiere;
         $this->valeurNote = $valeurNote;
         $this->coefficient = $coefficient;

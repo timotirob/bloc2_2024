@@ -2,11 +2,13 @@
 namespace Enc ;
 require "../vendor/autoload.php" ;
 
-$listeNotesMathRobert = array( new Note("Math", 12, 2, "2021-01-01"),
-    new Note("Math", 16, 4, "2021-03-01")) ;
+$listeNotesMathRobert = array( new Note(new Matiere("MA","Mathématiques"), 12, 2, "2021-01-01"),
+    new Note(new Matiere("MA","Mathématiques"), 16, 4, "2021-03-01")) ;
 
 // echo Moyenne::calculMoyenne([10, 12, 14, 16])."\n" ;
 
-echo Moyenne::calculMoyenneNaive($listeNotesMathRobert)."\n" ;
+$uneMoyenne = new Moyenne($listeNotesMathRobert) ;
 
-echo Moyenne::calculVraieMoyenne($listeNotesMathRobert)."\n" ;
+echo $uneMoyenne->calculMoyenneNaive()."\n" ;
+
+echo $uneMoyenne->calculVraieMoyenne()."\n" ;
