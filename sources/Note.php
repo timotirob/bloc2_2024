@@ -16,7 +16,7 @@ public function __construct(Matiere $matiere, $valeurNote, $coefficient, $dateNo
         } else {
             $this->dateNote = new \DateTime($dateNote);
         }*/
-    $this->dateNote = (is_null($dateNote)) ? new \DateTime() : new \DateTime($dateNote);
+    $this->dateNote = (is_null($dateNote)) ? new \DateTime() : $dateNote  ;
     }
 
     public function getMatiere(): string
